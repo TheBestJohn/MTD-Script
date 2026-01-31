@@ -16,6 +16,7 @@ This Python script downloads map tiles from Thunderforest's Mobile Atlas for spe
 - Python 3.x
 - `requests` library
 - `tqdm` library
+- `dotenv` library
 - For KMLtoTiles: `fastkml` library
 
 ## Installation
@@ -30,7 +31,7 @@ This Python script downloads map tiles from Thunderforest's Mobile Atlas for spe
 2. Install the required Python packages:
 
     ```bash
-    pip install requests tqdm fastkml
+    pip install -r requirements.txt
     ```
     Note: fastkml is not required to use `TileDL.py`
 
@@ -38,25 +39,19 @@ This Python script downloads map tiles from Thunderforest's Mobile Atlas for spe
 
 1. Obtain an API key from [Thunderforest](https://www.thunderforest.com/docs/apikeys/).
 
-2. Edit the script to include your API key:
+2. copy .env_sample as .env and edit it to include your API key, desired regions, max workers, and zoom levels:
 
-    ```python
-    api_key = "your_api_key_here"
+    ```bash
+    API_KEY="your_api_key_here"
+    REGIONS="southern_ontario:41.5, -83.5, 45.5, -75.0;
+    las_vegas:35.5, -116.0, 37.5, -114.0;
+    grand_canyon:35.5, -113.0, 37.0, -111.0"
+    WORKERS=10
+    MINZOOM=1
+    MAXZOOM=14
     ```
 
-3. Specify the regions and zoom levels you want to download in the script:
-
-    ```python
-    # Define the bounding boxes and zoom levels
-    regions = {
-        "southern_ontario": (41.5, -83.5, 45.5, -75.0),
-        "las_vegas": (35.5, -116.0, 37.5, -114.0),
-        "grand_canyon": (35.5, -113.0, 37.0, -111.0)
-    }
-    zoom_levels = range(1, 15)  # Focusing on zoom levels 1 to 14
-    ```
-
-4. Choose map style
+2. Choose map style
 
     ```python
     # mapstyle = "cycle"
@@ -70,9 +65,6 @@ This Python script downloads map tiles from Thunderforest's Mobile Atlas for spe
     # mapstyle = "neighbourhood"
     # mapstyle = "atlas"
     ```
-    
-
-   
    
 ## Usage (TileDL.py)
 
