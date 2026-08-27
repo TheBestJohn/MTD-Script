@@ -33,7 +33,7 @@ def load_regions_from_env():
 # Define the bounding boxes and zoom levels. Below are random examples.
 regions = load_regions_from_env()
 print(regions)
-WORKERS=os.getenv("WORKERS", 10)
+WORKERS=int(os.getenv("WORKERS", 10))
 zoom_levels = range(int(os.getenv("MINZOOM", 1)), int(os.getenv("MAXZOOM", 14))+1)  # Defaults to zoom levels 1 to 14
 
 # mapstyle = "cycle"
