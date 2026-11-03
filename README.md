@@ -24,7 +24,7 @@ This Python script downloads map tiles from Thunderforest's Mobile Atlas for spe
 1. Clone the repository:
 
     ```bash
-    git clone https://github.com/fistulareffigy/MTD-Script.git
+    git clone https://github.com/TheBestJohn/MTD-Script.git
     cd MTD-Script
     ```
 
